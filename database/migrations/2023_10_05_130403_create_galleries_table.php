@@ -12,6 +12,7 @@ class CreateGalleriesTable extends Migration
             $table->id();
             $table->string('title', 255);
             $table->text('description')->nullable();
+            $table->text('urls');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

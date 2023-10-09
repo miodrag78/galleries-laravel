@@ -11,21 +11,30 @@ class GalleryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true; // Postavite na true da biste omogućili izvršenje ovog requesta
     }
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<string>>
      */
     public function rules(): array
     {
         return [
-        'title' => 'required|min:2|max:255',
+            'title' => 'required|min:2|max:255',
         'description' => 'nullable|max:1000',
         'image_urls' => 'required|array|min:1',
         'image_urls.*' => 'url', // Validacija za svaki URL u listi
+        'urls' => 'required|array|min:1', // Validacija za polje 'urls'
+        'urls.*' => 'url', // Validacija za svaki URL u polju 'urls'
+        'term' => 'nullable|string', // Dodajte pravilo za term
         ];
     }
 }
+
+
+
+
+
+

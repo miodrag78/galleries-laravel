@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 use App\Models\Image;
-use App\Models\ImageModel;
+
 use Illuminate\Database\Seeder;
 
-class ImageSeeder extends Seeder
+class ImagesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
